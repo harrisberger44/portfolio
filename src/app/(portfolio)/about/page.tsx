@@ -8,12 +8,9 @@ export default function AboutPage() {
       </header>
 
       <ContentBlock
-        text="Introductory text about the illustrator will go here. Share background, practice, and what drives the work."
-      />
-
-      <ContentBlock
-        title="Biography"
-        text="A longer biography section with education, exhibitions, clients, and other relevant details."
+        text="Hello, I'm Harris! I am an illustrator, art director, and registrar based in Brooklyn, New York."
+        imageSrc="/images/about page/DSCF0332.jpg"
+        imageAlt="Harris Berger"
         imagePosition="above"
       />
     </div>
