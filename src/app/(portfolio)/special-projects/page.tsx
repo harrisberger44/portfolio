@@ -14,7 +14,7 @@ export default function SpecialProjectsPage() {
         text="Self-initiated and experimental work lives here — personal series, collaborations, and one-off explorations."
       />
 
-      <section className="flex flex-col gap-4">
+      <section className="flex flex-col gap-8">
         <Link
           href="/special-projects/night-lights-denver"
           className="group flex flex-col gap-2"
@@ -24,6 +24,18 @@ export default function SpecialProjectsPage() {
           </h2>
           <p className="text-sm font-normal leading-relaxed opacity-70">
             With/in. — projection, performance, and light in Denver.
+          </p>
+        </Link>
+
+        <Link
+          href="/special-projects/blink-festival"
+          className="group flex flex-col gap-2"
+        >
+          <h2 className="text-base font-bold uppercase tracking-wide transition-opacity group-hover:opacity-65">
+            Blink Festival
+          </h2>
+          <p className="text-sm font-normal leading-relaxed opacity-70">
+            FuTerra | I Was The Earth — immersive projection for BLINK 2024.
           </p>
         </Link>
       </section>

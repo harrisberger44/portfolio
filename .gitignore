@@ -29,6 +29,8 @@
 *.MP4
 *.mov
 *.MOV
+*.ARW
+*.arw
 
 # debug
 npm-debug.log*
