@@ -21,19 +21,47 @@ export default function NightLightsDenverPage() {
 
       <header className="flex flex-col gap-2">
         <p className="text-xs font-bold uppercase tracking-wide">
-          Night Lights Denver
+          Night Lights Denver | April 2026
         </p>
         <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
           With/in.
         </h1>
+        <p className="text-xs tracking-wide [font-variant:small-caps] opacity-65">
+          role: artistic director
+        </p>
       </header>
 
       <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
-        <p className="text-sm font-normal leading-relaxed">
-          Artist statement placeholder. This space is reserved for your
-          statement about Night Lights Denver — the themes, process, and intent
-          behind the work. Replace this text with your own words when ready.
-        </p>
+        <div className="flex flex-col gap-6 text-sm font-normal leading-relaxed">
+          <p>
+            <em>With/In</em> is a projection-based artwork/animation created for{" "}
+            <em>Night Lights Denver</em> that tells a story set in a fantastical
+            dreamscape where childhood games and toys become mystical rituals for
+            personal enlightenment.
+          </p>
+          <p>
+            The work explores the transformations that are most dramatic in our
+            youth but recur in all seasons of life: finding your voice amid
+            alienation, finding your creativity in solitude, and finally finding
+            yourself by uplifting the community around you.
+          </p>
+          <p>
+            The work was projected onto the Daniel&apos;s &amp; Fisher Tower in
+            downtown Denver from April 1–30 2026.
+          </p>
+
+          <div className="flex flex-col gap-3 pt-2">
+            <p className="text-xs font-bold uppercase tracking-wide">
+              Credits
+            </p>
+            <ul className="flex flex-col gap-1 text-sm font-normal leading-relaxed">
+              <li>Executive Producer/Creative Director – Emily Ho</li>
+              <li>Artistic Director | Lead Illustration – Harris Berger</li>
+              <li>Production Coordinator – Brad Schmitz</li>
+              <li>Lead Motion Designer – Emma Todys</li>
+            </ul>
+          </div>
+        </div>
 
         <div className="relative aspect-video w-full overflow-hidden bg-neutral-100">
           <iframe
