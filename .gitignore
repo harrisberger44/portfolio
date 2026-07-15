@@ -22,6 +22,8 @@
 
 # misc
 .DS_Store
+desktop.ini
+Thumbs.db
 *.pem
 
 # large local video files (exceed GitHub size limits)
@@ -31,6 +33,12 @@
 *.MOV
 *.ARW
 *.arw
+*.tif
+*.TIF
+*.tiff
+*.TIFF
+*.heic
+*.HEIC
 
 # debug
 npm-debug.log*

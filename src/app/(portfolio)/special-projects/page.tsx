@@ -1,4 +1,3 @@
-import ContentBlock from "@/components/ContentBlock";
 import Link from "next/link";
 
 export default function SpecialProjectsPage() {
@@ -9,10 +8,6 @@ export default function SpecialProjectsPage() {
           Special Projects
         </h1>
       </header>
-
-      <ContentBlock
-        text="Self-initiated and experimental work lives here — personal series, collaborations, and one-off explorations."
-      />
 
       <section className="flex flex-col gap-8">
         <Link

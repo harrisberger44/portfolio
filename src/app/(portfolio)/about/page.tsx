@@ -8,7 +8,7 @@ export default function AboutPage() {
       </header>
 
       <ContentBlock
-        text="Hello, I'm Harris! I am an illustrator, art director, and registrar based in Brooklyn, New York."
+        text="I am a creative professional with a background spanning illustration, exhibition production, and gallery operations. I have experience managing projects from concept through execution within the contemporary art world. I am passionate about collaborating with multidisciplinary teams to bring ideas to life."
         imageSrc="/images/about page/DSCF0332.jpg"
         imageAlt="Harris Berger"
         imagePosition="above"

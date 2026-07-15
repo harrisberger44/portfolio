@@ -22,6 +22,10 @@ body {
   font-weight: 700;
 }
 
+main img {
+  cursor: zoom-in;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

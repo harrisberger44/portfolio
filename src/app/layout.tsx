@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ImageLightbox from "@/components/ImageLightbox";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -14,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className="min-h-full bg-white text-black antialiased">
-        {children}
+        <ImageLightbox>{children}</ImageLightbox>
       </body>
     </html>
   );

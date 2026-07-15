@@ -1,28 +1,21 @@
-import ContentBlock from "@/components/ContentBlock";
+import ImageGallery from "@/components/ImageGallery";
+import { getIllustrationImages } from "@/lib/illustration";
 
 export default function IllustrationPage() {
+  const images = getIllustrationImages();
+
   return (
-    <div className="mx-auto flex max-w-3xl flex-col gap-16">
-      <header>
+    <div className="mx-auto flex max-w-5xl flex-col gap-14">
+      <header className="flex flex-col gap-4">
         <h1 className="text-base font-bold uppercase tracking-wide">
           Illustration
         </h1>
+        <p className="text-2xl font-bold tracking-tight md:text-3xl">
+          Here is a random grabbag of my art, enjoy!
+        </p>
       </header>
 
-      <ContentBlock
-        text="A curated selection of illustration work — editorial, publishing, packaging, and more."
-      />
-
-      <ContentBlock
-        title="Editorial"
-        text="Editorial illustration samples with short captions or publication credits."
-      />
-
-      <ContentBlock
-        title="Publishing"
-        text="Book covers, interior art, and other publishing-related illustration."
-        imagePosition="above"
-      />
+      <ImageGallery images={images} altPrefix="Illustration by Harris Berger" />
     </div>
   );
 }
