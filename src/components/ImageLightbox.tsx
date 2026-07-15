@@ -57,7 +57,7 @@ export default function ImageLightbox({ children }: { children: ReactNode }) {
     if (!(target instanceof HTMLImageElement)) return;
 
     const pageImages = Array.from(
-      event.currentTarget.querySelectorAll("main img"),
+      event.currentTarget.querySelectorAll<HTMLImageElement>("main img"),
     );
     const clickedIndex = pageImages.indexOf(target);
     if (clickedIndex === -1) return;
