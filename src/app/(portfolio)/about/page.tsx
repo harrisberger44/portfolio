@@ -8,7 +8,7 @@ export default function AboutPage() {
       </header>
 
       <ContentBlock
-        text="I am a creative professional with a background spanning illustration, exhibition production, and gallery operations. I have experience managing projects from concept through execution within the contemporary art world. I am passionate about collaborating with multidisciplinary teams to bring ideas to life."
+        text="Creative professional with a background spanning illustration, exhibition production, and gallery operations. Experienced in managing projects from concept through execution within the contemporary art world. Passionate about collaborating with multidisciplinary teams to bring ideas to life."
         imageSrc="/images/about page/DSCF0332.jpg"
         imageAlt="Harris Berger"
         imagePosition="below"
