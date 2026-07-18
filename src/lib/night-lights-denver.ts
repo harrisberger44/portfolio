@@ -3,39 +3,53 @@ import path from "path";
 
 const IMAGE_DIR = path.join(
   process.cwd(),
-  "public/images/night lights denver",
+  "public/images/night lights denver/new images for page",
 );
 
 const IMAGE_EXTENSIONS = /\.(jpe?g|png|webp|gif|avif)$/i;
 
-function shuffleWithSeed<T>(items: T[], seed: string): T[] {
-  const shuffled = [...items];
-  let state = 0;
-
-  for (let i = 0; i < seed.length; i++) {
-    state = (state + seed.charCodeAt(i)) % 2147483647;
-  }
-
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    state = (state * 48271) % 2147483647;
-    const j = state % (i + 1);
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-
-  return shuffled;
+/** Public URL; only encode characters that break URL parsing (&). */
+function toPublicUrl(...segments: string[]): string {
+  return `/${["images", "night lights denver", "new images for page", ...segments]
+    .map((segment) => segment.replaceAll("&", "%26"))
+    .join("/")}`;
 }
 
-export function getNightLightsDenverImages(): string[] {
-  if (!fs.existsSync(IMAGE_DIR)) return [];
+function listImagesIn(subdir: string): string[] {
+  const dir = path.join(IMAGE_DIR, subdir);
+  if (!fs.existsSync(dir)) return [];
 
-  const files = fs
-    .readdirSync(IMAGE_DIR)
+  return fs
+    .readdirSync(dir)
     .filter((file) => IMAGE_EXTENSIONS.test(file))
-    .sort((a, b) => a.localeCompare(b));
-
-  return shuffleWithSeed(files, "night-lights-denver-gallery").map(
-    (file) => `/images/night lights denver/${file}`,
-  );
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+    .map((file) => toPublicUrl(subdir, file));
 }
 
-export const NIGHT_LIGHTS_YOUTUBE_ID = "kG5vO0mP-b8";
+export type NightLightsDenverGallery = {
+  hero: string | null;
+  wholeBuilding: string[];
+  gifs: string[];
+  bts: string[];
+  grid: string[];
+};
+
+export function getNightLightsDenverGallery(): NightLightsDenverGallery {
+  const heroFile = "NLD hero for website.jpg";
+  const heroPath = path.join(IMAGE_DIR, heroFile);
+  const hero = fs.existsSync(heroPath) ? toPublicUrl(heroFile) : null;
+
+  const wholeBuilding = listImagesIn("whole building");
+  const gifs = listImagesIn("gifs");
+  const bts = listImagesIn("BTS");
+
+  return {
+    hero,
+    wholeBuilding,
+    gifs,
+    bts,
+    grid: [...wholeBuilding, ...gifs, ...bts],
+  };
+}
+
+export const NIGHT_LIGHTS_VIMEO_ID = "1210920285";

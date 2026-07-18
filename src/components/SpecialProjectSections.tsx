@@ -1,15 +1,17 @@
+import Image from "next/image";
 import ImageGallery from "@/components/ImageGallery";
+import VimeoEmbed from "@/components/VimeoEmbed";
 import {
   BLINK_FESTIVAL_VIMEO_ID,
   getBlinkFestivalImages,
 } from "@/lib/blink-festival";
 import {
-  getNightLightsDenverImages,
-  NIGHT_LIGHTS_YOUTUBE_ID,
+  getNightLightsDenverGallery,
+  NIGHT_LIGHTS_VIMEO_ID,
 } from "@/lib/night-lights-denver";
 
 export function NightLightsDenverContent() {
-  const images = getNightLightsDenverImages();
+  const { hero, grid } = getNightLightsDenverGallery();
 
   return (
     <>
@@ -55,20 +57,26 @@ export function NightLightsDenverContent() {
           </div>
         </div>
 
-        <div className="relative aspect-video w-full overflow-hidden bg-neutral-100">
-          <iframe
-            src={`https://www.youtube.com/embed/${NIGHT_LIGHTS_YOUTUBE_ID}`}
-            title="Night Lights Denver"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            className="absolute inset-0 h-full w-full border-0"
-          />
-        </div>
+        <VimeoEmbed videoId={NIGHT_LIGHTS_VIMEO_ID} title="NLD" />
       </div>
 
       <section className="flex flex-col gap-6">
         <h3 className="text-xs font-bold uppercase tracking-wide">Gallery</h3>
-        <ImageGallery images={images} altPrefix="Night Lights Denver" />
+        <div className="flex flex-col gap-4">
+          {hero && (
+            <div className="relative aspect-video w-full overflow-hidden bg-neutral-100 lg:ml-auto lg:w-[calc((100%-3rem)/2)]">
+              <Image
+                src={hero}
+                alt="Night Lights Denver — With/in projection"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
+            </div>
+          )}
+          <ImageGallery images={grid} altPrefix="Night Lights Denver" />
+        </div>
       </section>
     </>
   );
@@ -124,15 +132,11 @@ export function BlinkFestivalContent() {
           </div>
         </div>
 
-        <div className="relative aspect-video w-full overflow-hidden bg-neutral-100">
-          <iframe
-            src={`https://player.vimeo.com/video/${BLINK_FESTIVAL_VIMEO_ID}`}
-            title="Blink Festival — FuTerra | I Was The Earth"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-            allowFullScreen
-            className="absolute inset-0 h-full w-full border-0"
-          />
-        </div>
+        <VimeoEmbed
+          videoId={BLINK_FESTIVAL_VIMEO_ID}
+          title="Blink Festival — FuTerra | I Was The Earth"
+          query=""
+        />
       </div>
 
       <section className="flex flex-col gap-6">
