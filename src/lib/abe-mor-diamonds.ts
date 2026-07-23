@@ -25,5 +25,6 @@ export function getAbeMorImages(): string[] {
         file.toLowerCase() !== "catalog cover.jpg",
     )
     .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+    .slice(0, 9)
     .map((file) => `/images/Abe Mor Diamonds/${file}`);
 }

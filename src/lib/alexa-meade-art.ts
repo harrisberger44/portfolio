@@ -19,5 +19,6 @@ export function getAlexaMeadeImages(): string[] {
         file.toLowerCase() !== "img_2885.jpeg",
     )
     .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+    .slice(0, -1)
     .map((file) => `/images/Alexa Meade Art/${file}`);
 }
